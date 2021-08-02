@@ -4,5 +4,13 @@
     "--load-plugins=pylint_django",
     "--django-settings-module=levelup.settings"
   ],
-  "python.pythonPath": "/Users/calebwagner/.local/share/virtualenvs/levelup-uT7CAuO9/bin/python"
+"python.pythonPath": "/Users/calebwagner/.local/share/virtualenvs/levelup-uT7CAuO9/bin/python",
+"sqltools.connections": [
+    {
+        "previewLimit": 50,
+        "driver": "SQLite",
+        "name": "Level Up Server",
+        "database": "db.sqlite3"
+    }
+]
 }
