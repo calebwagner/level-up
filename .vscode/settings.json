@@ -1,5 +1,8 @@
 {
-  "python.pythonPath": "/Users/calebwagner/.local/share/virtualenvs/levelup-uT7CAuO9/bin/python",
-  "python.linting.pylintArgs": ["--load-plugins=pylint_django"],
-  "python.linting.pylintArgs": ["--django-settings-module=<levelup>.settings"]
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": [
+    "--load-plugins=pylint_django",
+    "--django-settings-module=levelup.settings"
+  ],
+  "python.pythonPath": "/Users/calebwagner/.local/share/virtualenvs/levelup-uT7CAuO9/bin/python"
 }
