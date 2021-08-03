@@ -1,0 +1,26 @@
+[
+  {
+    "model": "levelupapi.game",
+    "pk": 1,
+    "fields": {
+      "name": "Berg",
+      "description": "Cool game",
+      "number_of_players": 4,
+      "maker": "Klaus Teuber",
+      "game_type_id": 1,
+      "gamer_id": 1
+    }
+  },
+  {
+    "model": "levelupapi.game",
+    "pk": 2,
+    "fields": {
+      "name": "Bert",
+      "description": "Very cool game",
+      "number_of_players": 6,
+      "maker": "Teuber",
+      "game_type_id": 1,
+      "gamer_id": 1
+    }
+  }
+]

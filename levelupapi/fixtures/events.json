@@ -1,0 +1,14 @@
+[
+  {
+    "model": "levelupapi.event",
+    "pk": 1,
+    "fields": {
+      "host": 1,
+      "game": 2,
+      "date": "2021-10-04",
+      "time": "12:00",
+      "description": "great game must play",
+      "title": "CHESS"
+    }
+  }
+]

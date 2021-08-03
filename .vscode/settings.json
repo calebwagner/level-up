@@ -7,10 +7,11 @@
   ],
   "sqltools.connections": [
     {
-      "previewLimit": 50,
-      "driver": "SQLite",
-      "name": "Level up",
-      "database": "./db.sqlite3"
+        "previewLimit": 50,
+        "driver": "SQLite",
+        "name": "Level Up",
+        "database": "db.sqlite3"
     }
-  ]
+],
+"python.pythonPath": "/Users/calebwagner/.local/share/virtualenvs/levelup-uT7CAuO9/bin/python"
 }
