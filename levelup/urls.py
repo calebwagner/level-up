@@ -1,3 +1,6 @@
+from rest_framework import routers
+from levelupapi.views import GameTypeView
+
 """levelup URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -16,6 +19,9 @@ Including another URLconf
 from django.conf.urls import include
 from django.urls import path
 from levelupapi.views import register_user, login_user
+
+router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'gametypes', GameTypeView, 'gametype')
 
 urlpatterns = [
     # Requests to http://localhost:8000/register will be routed to the register_user function
