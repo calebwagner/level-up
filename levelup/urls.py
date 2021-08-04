@@ -1,5 +1,6 @@
 from rest_framework import routers
 from levelupapi.views import GameTypeView
+from levelupapi.views import GameTypes, Games, GameView
 
 """levelup URL Configuration
 
@@ -22,6 +23,8 @@ from levelupapi.views import register_user, login_user
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'gametypes', GameTypeView, 'gametype')
+router.register(r'games', GameView, 'game')
+
 
 urlpatterns = [
     # Requests to http://localhost:8000/register will be routed to the register_user function
