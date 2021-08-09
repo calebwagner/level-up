@@ -5,7 +5,6 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
-from rest_framework import status
 from levelupapi.models import Game, GameType, Gamer
 
 
@@ -25,7 +24,7 @@ class GameView(ViewSet):
         # and set its properties from what was sent in the
         # body of the request from the client.
         game = Game()
-        game.name = request.data["name"]
+        game.name = request.data["name"]  # TODO: request.data handles arbitrary data.  Works for 'POST', 'PUT' and 'PATCH' methods.
         game.description = request.data["description"]
         game.number_of_players = request.data["numberOfPlayers"]
         game.maker = request.data["maker"]
@@ -43,13 +42,13 @@ class GameView(ViewSet):
         try:
             game.save()
             serializer = GameSerializer(game, context={'request': request})
-            return Response(serializer.data)
+            return Response(serializer.data)  # TODO: Renders to content type as requested by the client.
 
         # If anything went wrong, catch the exception and
         # send a response with a 400 status code to tell the
         # client that something was wrong with its request data
         except ValidationError as ex:
-            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST) # TODO: REST framework provides more explicit identifiers for each status code
 
 
 
