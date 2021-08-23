@@ -5,8 +5,9 @@ from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers
+from rest_framework import status
 from levelupapi.models import Game, GameType, Gamer
-
+from django.db.models import Count
 
 class GameView(ViewSet):
     """Level up games"""
@@ -48,7 +49,7 @@ class GameView(ViewSet):
         # send a response with a 400 status code to tell the
         # client that something was wrong with its request data
         except ValidationError as ex:
-            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST) # TODO: REST framework provides more explicit identifiers for each status code
+            return Response({"reason": ex.message}, status=status.HTTP_400_BAD_REQUEST) #
 
 
 
@@ -117,7 +118,10 @@ class GameView(ViewSet):
             Response -- JSON serialized list of games
         """
         # Get all game records from the database
-        games = Game.objects.all()
+        # games = Game.objects.all()
+
+        games = Game.objects.annotate(event_count=Count('events'))
+
 
         # Support filtering games by type
         #    http://localhost:8000/games?type=1
@@ -139,5 +143,5 @@ class GameSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Game
-        fields = ('id', 'name', 'description', 'number_of_players', 'maker', 'game_type')
+        fields = ('id', 'name', 'description', 'maker', 'number_of_players', 'gamer','game_type', 'event_count')
         depth = 1

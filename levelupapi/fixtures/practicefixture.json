@@ -1,0 +1,10 @@
+[
+  {
+    "model": "levelupapi.modelpracticedoesnotmatter",
+    "pk": 1,
+    "fields": {
+      "name": "Bobby Smith",
+      "description": "This object is just an example of the process of full stack development."
+    }
+  }
+]

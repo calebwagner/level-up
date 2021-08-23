@@ -18,17 +18,16 @@ class Profile(ViewSet):
             Response -- JSON representation of user info and events
         """
         gamer = Gamer.objects.get(user=request.auth.user)
-        events = Event.objects.filter(attendees=gamer)
+        events = Event.objects.filter(attendees=gamer) # checking id gamer is in attendees list
 
-        events = EventSerializer(
-            events, many=True, context={'request': request})
-        gamer = GamerSerializer(
-            gamer, many=False, context={'request': request})
+        events = EventSerializer(events, many=True, context={'request': request})
+        gamer = GamerSerializer(gamer, many=False, context={'request': request})
 
         # Manually construct the JSON structure you want in the response
-        profile = {}
-        profile["gamer"] = gamer.data
-        profile["events"] = events.data
+        profile = {
+        'gamer': gamer.data,
+        'events': events.data
+        }
 
         return Response(profile)
 
@@ -61,4 +60,4 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'game', 'description', 'date', 'time')
+        fields = ('id', 'title', 'game', 'description', 'date', 'time')

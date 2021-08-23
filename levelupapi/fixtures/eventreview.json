@@ -1,0 +1,11 @@
+[
+  {
+    "model": "levelupapi.eventreview",
+    "pk": 1,
+    "fields": {
+      "review": "best event I've been to!",
+      "rating": 5,
+      "event": 1
+    }
+  }
+]

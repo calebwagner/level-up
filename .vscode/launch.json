@@ -10,6 +10,17 @@
       "autoReload": {
         "enable": true
       }
+    },
+    {
+      "name": "Django Handler",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/manage.py",
+      "args": ["runserver"],
+      "autoReload": {
+        "enable": true
+      },
+      "django": true
     }
   ]
 }

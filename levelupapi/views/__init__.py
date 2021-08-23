@@ -5,3 +5,5 @@ from .gametype import GameTypeView
 from .game import GameView
 from .event import EventView
 from .profile import Profile
+from .eventreview import EventReviewView
+from .practice import PracticeView

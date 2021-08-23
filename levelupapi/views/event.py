@@ -1,4 +1,5 @@
 """View module for handling requests about events"""
+import re
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.http import HttpResponseServerError
@@ -9,7 +10,7 @@ from rest_framework import serializers
 from rest_framework.decorators import action
 from levelupapi.models import Game, Event, Gamer
 from levelupapi.views.game import GameSerializer
-
+from django.db.models import Count, fields
 
 class EventView(ViewSet):
     """Level up events"""
@@ -169,7 +170,7 @@ class GameSerializer(serializers.ModelSerializer):
     """JSON serializer for games"""
     class Meta:
         model = Game
-        fields = ('id', 'name', 'description', 'number_of_players', 'gamer', 'maker')
+        fields = ('id', 'name', 'description', 'maker', 'number_of_players', 'gamer','game_type', 'event_count')
 
 class EventSerializer(serializers.ModelSerializer):
     """JSON serializer for events"""

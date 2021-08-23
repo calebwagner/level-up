@@ -8,7 +8,8 @@
       "number_of_players": 2,
       "maker": "Klaus Teuber",
       "game_type": 1,
-      "gamer": 1
+      "gamer": 1,
+      "skill_level": 5
     }
   },
   {
@@ -20,7 +21,8 @@
       "number_of_players": 2,
       "maker": "Teuber",
       "game_type": 2,
-      "gamer": 1
+      "gamer": 1,
+      "skill_level": 3
     }
   },
   {
@@ -32,7 +34,8 @@
       "number_of_players": 2,
       "maker": "Teuber",
       "game_type": 3,
-      "gamer": 1
+      "gamer": 1,
+      "skill_level": 2
     }
   }
 ]
