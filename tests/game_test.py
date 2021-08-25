@@ -103,7 +103,9 @@ class GameTests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
         # Assert that the values are correct
-        self.assertEqual(json_response["name"], "Monopoly")
+        # TODO: response.data exercise
+        # self.assertEqual(response.data, "Monopoly")
+        # self.assertEqual(json_response["name"], "Monopoly")
         self.assertEqual(json_response["maker"], "Milton Bradley")
         # self.assertEqual(json_response["skill_level"], 5)
         self.assertEqual(json_response["number_of_players"], 4)
