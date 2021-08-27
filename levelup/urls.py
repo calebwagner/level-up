@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
+from django.contrib import admin
 from levelupapi.views import register_user, login_user, GameTypeView, GameView, EventView, Profile, EventReviewView, PracticeView
 
 router = routers.DefaultRouter(trailing_slash=False)
@@ -29,6 +30,7 @@ router.register(r'practiceee', PracticeView, 'practicet')
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', include(router.urls)),
     # Requests to http://localhost:8000/register will be routed to the register_user function
     path('register', register_user),
